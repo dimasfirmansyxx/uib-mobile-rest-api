@@ -15,6 +15,12 @@ class CreateAttendanceDetailsTable extends Migration
     {
         Schema::create('attendance_details', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('attendance');
+            $table->string('long');
+            $table->string('lat');
+            $table->string('address');
+            $table->string('photo');
+            $table->enum('type', ['in', 'out']);
             $table->timestamps();
         });
     }
